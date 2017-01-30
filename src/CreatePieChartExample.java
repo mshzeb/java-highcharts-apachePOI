@@ -19,7 +19,7 @@ public class CreatePieChartExample {
 
 	public static void main(String[] args) throws Exception {
 
-		FileInputStream chart_file_input = new FileInputStream(new File("D:\\Java Projects Juno\\ApachePOI\\src\\my_chart.xls"));
+		FileInputStream chart_file_input = new FileInputStream(new File("src\\output_file\\my_chart.xls"));
 		HSSFWorkbook my_workbook = new HSSFWorkbook(chart_file_input);
 		HSSFSheet my_sheet = my_workbook.getSheetAt(0);
 		
@@ -65,7 +65,7 @@ public class CreatePieChartExample {
 		HSSFPicture my_picture = drawing.createPicture(my_anchor, my_picture_id);
 		my_picture.resize();
 		
-		FileOutputStream out = new FileOutputStream(new File("D:\\Java Projects Juno\\ApachePOI\\src\\my_chart.xls"));
+		FileOutputStream out = new FileOutputStream(new File("src\\output_file\\my_chart.xls"));
 		my_workbook.write(out);
 		out.close();
 		
